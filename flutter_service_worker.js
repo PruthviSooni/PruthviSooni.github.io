@@ -5,7 +5,7 @@ const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
   ".git/config": "a802e40465c887f81c42bcff0a54bff5",
 ".git/description": "a0a7c3fff21f2aea3cfa1d0316dd816c",
-".git/FETCH_HEAD": "7c4f28ae47c959ad7fb577e6e7068361",
+".git/FETCH_HEAD": "de8b5d08548a47b1bd4820c110ffe4b1",
 ".git/HEAD": "4cf2d64e44205fe628ddd534e1151b58",
 ".git/hooks/applypatch-msg.sample": "ce562e08d8098926a3862fc6e7905199",
 ".git/hooks/commit-msg.sample": "579a3c1e12a1e74a98169175fb913012",
@@ -19,15 +19,15 @@ const RESOURCES = {
 ".git/hooks/pre-receive.sample": "2ad18ec82c20af7b5926ed9cea6aeedd",
 ".git/hooks/prepare-commit-msg.sample": "2b5c047bdb474555e1787db32b2d2fc5",
 ".git/hooks/update.sample": "647ae13c682f7827c22f5fc08a03674e",
-".git/index": "333c1120c2172d67649d707ddd68eee3",
+".git/index": "cd08827d83bb906501aabf50fb50227d",
 ".git/info/exclude": "036208b4a1ab4a235d75c181e685e5a3",
-".git/logs/HEAD": "93b9f0c1023d32aa0db3b6fa2146e439",
-".git/logs/refs/heads/master": "93b9f0c1023d32aa0db3b6fa2146e439",
-".git/logs/refs/remotes/origin/HEAD": "93b9f0c1023d32aa0db3b6fa2146e439",
-".git/objects/pack/pack-b348df7f04027fc194478a2a80a6ab55052c6fa7.idx": "0f9d1cc18684fe20ad4fd3587332b078",
-".git/objects/pack/pack-b348df7f04027fc194478a2a80a6ab55052c6fa7.pack": "f299029ee48f75bc09a6aa99579883a6",
-".git/packed-refs": "8eba1d47eafe005c082757cd7e07cb10",
-".git/refs/heads/master": "14852f0976a84c1f1c5da570f9a66e1e",
+".git/logs/HEAD": "01c0017166437a7b235e83b3b310585e",
+".git/logs/refs/heads/master": "01c0017166437a7b235e83b3b310585e",
+".git/logs/refs/remotes/origin/HEAD": "01c0017166437a7b235e83b3b310585e",
+".git/objects/pack/pack-7d8ffdcfd929f3b18bd197e37e66354cab05eb87.idx": "84887b87a27247f4be33b1f661d18b5c",
+".git/objects/pack/pack-7d8ffdcfd929f3b18bd197e37e66354cab05eb87.pack": "2a2ee2eb8385e6ab2500e24703fb74d9",
+".git/packed-refs": "9a7f3f768a8863712309a9b4ac72777b",
+".git/refs/heads/master": "268f98aae601ea2b140709c6e34261ee",
 ".git/refs/remotes/origin/HEAD": "73a00957034783b7b5c8294c54cd3e12",
 "assets/AssetManifest.json": "83e2a95e5052181e6579a6ee949c8c01",
 "assets/assets/conversation.png": "6a9f12bccdd6c1200e8f9e0a6a42c665",
@@ -62,10 +62,10 @@ const RESOURCES = {
 "assets/assets/tools.png": "1a676e42f3a88bec84cfc87bb1f12da1",
 "assets/assets/tools_icon.png": "b8f43694ba0a7ccfbeb169501e3d2836",
 "assets/FontManifest.json": "7aaf3996738086bbd796613e14ef9e45",
-"assets/fonts/MaterialIcons-Regular.otf": "1288c9e28052e028aba623321f7826ac",
+"assets/fonts/MaterialIcons-Regular.otf": "4e6447691c9509f7acdbf8a931a85ca1",
 "assets/fonts/MaterialIcons-Regular.ttf": "56d3ffdef7a25659eab6a68a3fbfaf16",
 "assets/fonts/Raleway-Regular.ttf": "9942588a6c84f959132556d99e83ded6",
-"assets/NOTICES": "baeeaa470dd937c7d31447976a5853bb",
+"assets/NOTICES": "16f274bee7e0fcc26d9e8901e3a88c0d",
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "b14fcf3ee94e3ace300b192e9e7c8c5d",
 "assets/packages/flutter_icons/fonts/AntDesign.ttf": "3a2ba31570920eeb9b1d217cabe58315",
 "assets/packages/flutter_icons/fonts/Entypo.ttf": "744ce60078c17d86006dd0edabcd59a7",
@@ -89,9 +89,9 @@ const RESOURCES = {
 "icons/Icon-192.png": "f4f9fb52c32c14630a72474b413a79d9",
 "icons/Icon-512.png": "12bc8f09e00a85472fe1547ef96d0f24",
 "icons/manifest.json": "fe7b2dbef5e2d9d02d918e6287b20465",
-"index.html": "730cf32e19139a0cb9544b1b06d7ca08",
-"/": "730cf32e19139a0cb9544b1b06d7ca08",
-"main.dart.js": "761fd54e747a53d4421a842ca56d8aef",
+"index.html": "5debddfd352aac8da7858ba97de3cdde",
+"/": "5debddfd352aac8da7858ba97de3cdde",
+"main.dart.js": "0c98e70513d55e73e158628ac2f74ce8",
 "manifest.json": "75721181c830e84b9d2b33e7c2b97e0a",
 "version.json": "426313f2f3133c2f20415344c4a22df3"
 };
@@ -111,7 +111,7 @@ self.addEventListener("install", (event) => {
   return event.waitUntil(
     caches.open(TEMP).then((cache) => {
       return cache.addAll(
-        CORE.map((value) => new Request(value + '?revision=' + RESOURCES[value], {'cache': 'reload'})));
+        CORE.map((value) => new Request(value, {'cache': 'reload'})));
     })
   );
 });
